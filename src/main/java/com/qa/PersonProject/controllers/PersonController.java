@@ -17,6 +17,11 @@ public class PersonController {
         return "Person Controller is healthy.";
     }
 
+    @GetMapping("/person/getAll")
+    public List<Person> getAll() {
+        return this.people;
+    }
+
     @PostMapping("/person/create")
     public boolean addPerson(@RequestBody @Valid Person person) {
         return this.people.add(person);
