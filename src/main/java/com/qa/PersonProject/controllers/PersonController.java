@@ -34,4 +34,9 @@ public class PersonController {
         this.people.add(id, person);
         return this.people.get(id);
     }
+
+    @DeleteMapping("/person/delete")
+    public Person deletePerson(@PathParam("id") int id, @RequestBody @Valid Person person) {
+        return this.people.remove(id);
+    }
 }
