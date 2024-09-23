@@ -2,6 +2,7 @@ package com.qa.PersonProject.controllers;
 
 import com.qa.PersonProject.entities.Person;
 import jakarta.validation.Valid;
+import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -25,5 +26,12 @@ public class PersonController {
     @PostMapping("/person/create")
     public boolean addPerson(@RequestBody @Valid Person person) {
         return this.people.add(person);
+    }
+
+    @PutMapping("/person/update")
+    public Person updatePerson(@PathParam("id") int id, @RequestBody @Valid Person person) {
+        this.people.remove(id);
+        this.people.add(id, person);
+        return this.people.get(id);
     }
 }
