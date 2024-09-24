@@ -61,4 +61,8 @@ public class PersonService {
         return this.repo.findPersonByAge(age);
     }
 
+    public List<Person> getAllPeopleWithAgeAndName(String name, int age) {
+        return this.repo.findPersonByNameAndAgeSQL(name, age);
+    }
+
 }

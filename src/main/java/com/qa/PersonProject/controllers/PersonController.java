@@ -48,4 +48,10 @@ public class PersonController {
     public List<Person> getAllPeopleAge(@PathParam("age") int age) {
         return this.service.getAllPeopleWithAge(age);
     }
+
+    @GetMapping("/person/getByAgeAndName")
+    public List<Person> getAllPeopleWithAgeAndName(@PathParam("age") int age, @PathParam("name") String name) {
+        return this.service.getAllPeopleWithAgeAndName(name, age);
+    }
+
 }
