@@ -13,4 +13,6 @@ public interface PersonRepo extends JpaRepository<Person, Integer> {
 
     @Query(value = "SELECT * FROM Person WHERE `firstname` = ?1 AND `age` = ?2", nativeQuery = true)
     List<Person> findPersonByNameAndAgeSQL(String name, int age);
+
+    Person findPersonById(int id);
 }

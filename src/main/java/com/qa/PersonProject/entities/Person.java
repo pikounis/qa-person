@@ -8,13 +8,35 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+@Data
+@NoArgsConstructor
 @Entity
 public class Person {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // <-- AUTO INCREMENT
+    private int id;
+
+
     @Size(min = 2, max = 30)
     @NotNull
     String firstname;
+
+    @Min(18)
+    @Max(75)
+    int age;
+
+    @Size(min = 2, max = 30)
+    @NotNull
+    String lastname;
+
+
+    /*
+
 
     @Min(18)
     @Max(75)
@@ -42,9 +64,7 @@ public class Person {
         this.firstname = firstname;
     }
 
-    @Size(min = 2, max = 30)
-    @NotNull
-    String lastname;
+
 
     public Person() {
 
@@ -56,9 +76,7 @@ public class Person {
         this.age = age;
     }
 
-    @Min(18)
-    @Max(75)
-    int age;
+
 
     public int getId() {
         return id;
@@ -67,8 +85,5 @@ public class Person {
     public void setId(int id) {
         this.id = id;
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // <-- AUTO INCREMENT
-    private int id;
+     */
 }

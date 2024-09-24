@@ -1,6 +1,7 @@
 package com.qa.PersonProject.controllers;
 
 import com.qa.PersonProject.entities.Person;
+import com.qa.PersonProject.entities.PersonDTO;
 import com.qa.PersonProject.service.PersonService;
 import jakarta.validation.Valid;
 import jakarta.websocket.server.PathParam;
@@ -25,17 +26,17 @@ public class PersonController {
     }
 
     @GetMapping("/person/getAll")
-    public List<Person> getAll() {
+    public List<PersonDTO> getAll() {
         return this.service.getAll();
     }
 
     @PostMapping("/person/create")
-    public Person addPerson(@RequestBody @Valid Person person) {
+    public PersonDTO addPerson(@RequestBody @Valid Person person) {
         return this.service.addPerson(person);
     }
 
     @PutMapping("/person/update")
-    public Person updatePerson(@PathParam("id") int id, @RequestBody @Valid Person person) {
+    public PersonDTO updatePerson(@PathParam("id") int id, @RequestBody @Valid Person person) {
         return this.service.updatePerson(id, person);
     }
 
@@ -52,6 +53,11 @@ public class PersonController {
     @GetMapping("/person/getByAgeAndName")
     public List<Person> getAllPeopleWithAgeAndName(@PathParam("age") int age, @PathParam("name") String name) {
         return this.service.getAllPeopleWithAgeAndName(name, age);
+    }
+
+    @GetMapping("/person/getById")
+    public PersonDTO getById(@PathParam("id") int id) {
+        return this.service.getById(id);
     }
 
 }
