@@ -21,7 +21,7 @@ public class PersonService {
         this.repo = repo;
     }
 
-    private List<Person> people = new ArrayList<>();
+//    private List<Person> people = new ArrayList<>();
 
     public String Health() {
         return "Person Controller is healthy.";
