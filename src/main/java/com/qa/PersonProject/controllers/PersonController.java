@@ -40,7 +40,7 @@ public class PersonController {
     }
 
     @DeleteMapping("/person/delete")
-    public Person deletePerson(@PathParam("id") int id, @RequestBody @Valid Person person) {
+    public boolean deletePerson(@PathParam("id") int id, @RequestBody @Valid Person person) {
         return this.service.deletePerson(id);
     }
 }
