@@ -43,4 +43,9 @@ public class PersonController {
     public boolean deletePerson(@PathParam("id") int id, @RequestBody @Valid Person person) {
         return this.service.deletePerson(id);
     }
+
+    @GetMapping("/person/getAllPeopleAge")
+    public List<Person> getAllPeopleAge(@PathParam("age") int age) {
+        return this.service.getAllPeopleWithAge(age);
+    }
 }

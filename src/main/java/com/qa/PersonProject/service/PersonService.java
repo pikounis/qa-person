@@ -56,4 +56,9 @@ public class PersonService {
         boolean exists = this.repo.existsById(id);
         return !exists;
     }
+
+    public List<Person> getAllPeopleWithAge(int age) {
+        return this.repo.findPersonByAge(age);
+    }
+
 }
