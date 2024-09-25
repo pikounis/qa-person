@@ -22,18 +22,23 @@ public class Person {
     private int id;
 
 
-    @Size(min = 2, max = 30)
+    @Size(min = 2, max = 50)
     @NotNull
     String firstname;
 
-    @Min(18)
+    @Min(1)
     @Max(75)
     int age;
 
-    @Size(min = 2, max = 30)
+    @Size(min = 2, max = 50)
     @NotNull
     String lastname;
 
+    public Person(String firstname, String lastname, int age) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+    }
 
     /*
 
