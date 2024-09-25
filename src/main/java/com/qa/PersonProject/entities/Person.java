@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 @Entity
+@AllArgsConstructor
 public class Person {
 
     @Id
@@ -34,11 +36,11 @@ public class Person {
     @NotNull
     String lastname;
 
-    public Person(String firstname, String lastname, int age) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.age = age;
-    }
+//    public Person(String firstname, String lastname, int age) {
+//        this.firstname = firstname;
+//        this.lastname = lastname;
+//        this.age = age;
+//    }
 
     /*
 
